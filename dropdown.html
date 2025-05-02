@@ -1,0 +1,128 @@
+<!Doctype HTML>
+<html>
+    <head>
+	<title>My Webpage</title>
+	<style>
+	body
+		{
+			text-align:center;
+		}
+	</style>
+
+     </head>
+     <body>
+	<h1>Registration Form</h1>
+         <form action ="https://www.amazon.in" onSubmit='return checkingpassword()'>
+	     FristName <input type="text" id="fname"><br><br>
+	     LastName <input type="text" id="lname"><br><br>
+	     Email id <input type="email" id="email"><br><br>
+	     confirm mail<input type="email" id="email"><br><br>
+	     Password <input type="password" id="password"><br><br>
+	     confirm pasword<input type="password"><br><br>
+	     <input type="radio" name="gender" value="Male">Male<br><br>
+	     <input type="radio" name="gender" value="Female">Female<br><br>
+	     Choose your Year of Passing
+	     <select id='yop'>
+		<option value="">Choose your Year of Passing</option>
+		<option value="2025">2025</option>
+		<option value="2024">2024</option>
+		<option value="2023">2023</option>
+		<option value="2022">2022</option>
+		<option value="2021">2021</option>
+	    </select><br><br>
+		Choose your Skills <br>
+		<input type="checkbox" name="Skills" value="Java">Java<br>
+		<input type="checkbox" name="Skills" value="nodejs">nodejs<br>
+		<input type="checkbox" name="Skills" value="Python">Python<br>
+		<input type="checkbox" name="Skills" value=".net">.net<br>
+		<input type="checkbox" name="Skills" value="reactjs">reactjs<br>
+		<input type="checkbox" name="Skills" value="c++">c++<br>
+	     <input type="submit">
+	</form>
+	<script>
+		function checkingpassword()
+		{
+			var first=document.getElementById("fname").value;
+			var Last=document.getElementById("lname").value;
+			if(first.charAt(0)>='0'&& first.charAt(0)<='9')
+			{
+				alert('first name doesnot start with digit');
+				return false;
+			}
+			if(first.length<=3)
+			{
+				alert('first name contains more than 3 letter');
+				return false;
+			}
+			if(first==""||first==" ")
+			{
+				alert('firstname and lastname doesnot contain blank');
+				return false;
+			}
+			var password=document.getElementById("password").value;
+			var confirm=document.getElementById("password").value;
+			if(password!=confirm)
+			{
+				alert('password not same');
+				return false;
+			}
+			if(password.length>6)
+			{
+				alert('password requried  6 letter');
+				return false;
+			}
+			var email=document.getElementById("email").value;
+			var confirmmail=document.getById("email").value;
+			if(email==confirmmail)
+			{
+				alert('mail is not same');
+				return false;
+			}
+			var x=document.getElementsByName('gender').value;
+			for(var i=0;i<x.length;i++)
+			{
+				if(x[i].checked)
+				{
+					console.log(x[i].value);
+					gen=x[i].value;
+					break;
+				}
+			}
+			return false;
+			if(gen==undefined)
+			{
+				alert('Select the gender');
+				return false;
+				
+			}
+			var y=document.getElementsByName('Skill');
+			var c=0
+			for(var j=0;j<y.length;j++)
+			{
+				if(y[i].checked)
+				{
+					console.log(y[i].value);
+					c++;
+				}
+			}
+			if(c==0)
+			{		
+				alert('Select atleast one skill');
+				return false;
+			}
+			var z=document.getElementById('yop').value;
+			if(z=="")
+			{
+				alert("choose your year of passing");
+				return false;
+			}
+			return true;
+			if(gen=="Female")
+				alert('Welcome miss/mrs');
+			else
+				alert('Welcome mr');
+			return true;
+			
+		}
+	</script>
+</html>

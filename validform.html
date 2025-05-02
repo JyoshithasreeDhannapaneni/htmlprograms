@@ -1,0 +1,108 @@
+<!Doctype HTML>
+<html>
+    <head>
+	<title>My Webpage</title>
+	<style>
+	body
+		{
+			text-align:center;
+		}
+	</style>
+
+     </head>
+     <body>
+	<h1>Registration Form</h1>
+         <form action ="https://www.amazon.in" onSubmit='return checkingpassword()'>
+	     FristName <input type="text" id="fname"><br><br>
+	     LastName <input type="text" id="lname"><br><br>
+	     Email id <input type="email" id="email"><br><br>
+	     Phone Number<input type="number" id ="number"><br><br>
+	     confirm mail<input type="email" id="email"><br><br>
+	     Password <input type="password" id="password"><br><br>
+	     confirm pasword<input type="password"><br><br>
+	     <input type="radio" name="gender">Male<br><br>
+	     <input type="radio" name="gender">Female<br><br>
+	     Choose your Yearof Passing
+	     <select>
+		<option value="2025">2025</option>
+		<option value="2024">2024</option>
+		<option value="2023">2023</option>
+		<option value="2022">2022</option>
+		<option value="2021">2021</option>
+	    </select><br><br>
+	     <input type="submit">
+	</form>
+	<script>
+		function checkingpassword()
+		{
+			var first=document.getElementById("fname").value;
+			var Last=document.getElementById("lname").value;
+			var phone=document.getElementById("phone").value;
+			var regp=/((\+*)((0[ -]*)*|((91 )*))((\d{12})+|(\d{10})+))|\d{5}([- ]*)\d{6}/
+			var regf=/^[A-Za-z\s-']{2,30}$/;
+			var regl=/^[a-zA-Z\s'-]{2,30}$/;
+			if(!regp.test(phone))
+			{
+				alert('enter valid phone number');
+				return false;
+			}
+			if(!regf.test(first))
+			{
+				alert('not a valid first name');
+				return false;
+			}
+			if(!regl.test(Last))
+			{		
+				alert('enter valid last name');
+				return false;
+			}
+			if(first.charAt(0)>='0'&& first.charAt(0)<='9')
+			{
+				alert('first name doesnot start with digit');
+				return false;
+			}
+			if(first.length<=3)
+			{
+				alert('first name contains more than 3 letter');
+				return false;
+			}
+			if(first==""||first==" ")
+			{
+				alert('firstname and lastname doesnot contain blank');
+				return false;
+			}
+			var password=document.getElementById("password").value;
+			var confirm=document.getElementById("password").value;
+			var rpass=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+			if(!rpass.test(password))
+			{
+				alert ('enter valid password');
+				return false;
+			}
+			if(password!=confirm)
+			{
+				alert('password not same');
+				return false;
+			}
+			if(password.length>6)
+			{
+				alert('password requried  6 letter');
+				return false;
+			}
+			var email=document.getElementById("email").value;
+			var confirmmail=document.getById("email").value;
+			var reg=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$/
+			if(reg.test(email)==false)
+			{
+				alert('email is invalid ');
+				return false;
+			}
+			if(email==confirmmail)
+			{
+				alert('mail is not same');
+				return false;
+			}
+			
+		}
+	</script>
+</html>

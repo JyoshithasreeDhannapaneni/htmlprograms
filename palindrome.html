@@ -1,0 +1,22 @@
+<!doctypehtml>
+<html>
+   <head>
+	<title>welcome to page</title>
+	<script>
+		function Palindrome(num)
+		{
+			rev=0,temp=num,rem=0;
+			while(num!=0)
+			{
+				rem=num%10;
+				rev=rev*10+rem;
+				num=parseInt(num/10);
+			}
+			console.log(temp==rev?"palindrome":"not Palindrome");
+		}
+		//result=Palindrome(121);
+		//console.log(result);
+		Palindrome(101)
+	</script>
+	</head>
+</html>

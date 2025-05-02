@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banking System</title>
+    <script>
+        let balance = 3000;
+        const correctPin = "1415";
+        function validatePin() {
+            const input = prompt("Enter your PIN:");
+            if (input === correctPin) {
+                return true;
+            } else {
+                alert("Incorrect PIN. Try again.");
+                return false;
+            }
+        }
+        function withdraw() {
+            if (!validatePin()) return;
+            const amount = parseFloat(prompt("Enter amount to withdraw:"));
+            if (isNaN(amount) || amount <= 0) {
+                alert("Invalid amount.");
+            } else if (amount > balance) {
+                alert("Insufficient balance.");
+            } else {
+                balance -= amount;
+                alert((amount)withdrawn successfully. New balance: (balance));
+            }
+        }
+        function deposit() {
+            if (!validatePin()) return;
+            const amount = parseFloat(prompt("Enter amount to deposit:"));
+            if (isNaN(amount) || amount <= 0) 
+	    {
+                alert("Invalid amount.");
+            } else {
+                balance += amount;
+                alert($₹(amount)deposited successfully. New balance:$₹ (balance));
+            }
+        }
+        function checkBalance() 
+	{
+            if (!validatePin()) return;
+            alert(Your current balance is $₹{balance});
+        }
+    </script>
+</head>
+<body>
+    <h2>Bank Account Operations</h2>
+    <button onclick="withdraw()">Withdraw</button>
+    <button onclick="deposit()">Deposit</button>
+    <button onclick="checkBalance()">Check Balance</button>
+</body>
+</html>
