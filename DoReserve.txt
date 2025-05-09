@@ -1,0 +1,15 @@
+class DoReserve
+{
+	public static void main(String[]args)
+	{
+		int num=12345,rev=0,rem=0;
+		do
+		{
+		System.out.println(rem);
+		rem=num%10;
+		rev=rev*num+rem;
+		num/=10;
+		}
+		while(num>=0);
+	}
+}

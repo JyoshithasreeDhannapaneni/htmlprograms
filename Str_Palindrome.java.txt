@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Str_Palindrome
+{
+	public static void main(String[]args)
+	{
+		Scanner sc=new Scanner(System.in)
+		String a=sc.nextLine();
+		String b="";
+		String c[]=a.split(nextLine());
+		String res="";
+	}
+	public void Palindrome(String a,String b,String c,String res)
+	{
+		for(String t:c)
+		{
+			String b=t;
+			System.out.println(b);
+		Stringbuffer sb=new StringBuffer(b);
+		sb.reverse();
+		System.out.println(sb);
+		}	
+	}
+}

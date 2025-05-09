@@ -1,23 +1,33 @@
-class Palindrome
+public class palindrome 
 {
-	static void checkPalindrome(int num,int rev)
+	int ispalindrome(int num,int rem,int rev)
 	{
-		int temp=num;
-		while(temp!=0)
+		while(num>0)
 		{
-		   int rem=temp%10;
-		   rev=rev*10+rem;
-		   temp=temp/10;
+		     num=num%10;
+		     rem=num*10;
+		     rev=num/10;
 		}
-		System.out.println(rev);
-		if(num==rev)
+		return rem;
+		}
+		class Main
 		{
-			System.out.println("palindrome number");
+			public static void main(String[]args)
+			{
+				palindrome p=new palindrome();
+				int result=p.ispalindrome(121,0,0);
+				System.out.println(result);
+			}
 		}
-	}
-   	public static void main(String[]args)
-	{
-		Palindrome p= new Palindrome();
-		p.checkPalindrome(121,0);
-	}
+	    	 void checkpalindrome(int num,int rem)
+		 { 
+			if(num==rem)
+			{
+				System.out.println("PALINDROME");
+			}
+			else
+			{
+				System.out.println("NOT PALINDROME");
+			}
+		 }
 }

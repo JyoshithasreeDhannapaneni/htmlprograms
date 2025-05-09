@@ -1,0 +1,19 @@
+class con1 
+{
+	String a,b;
+	con1()
+	{
+		a="Coding";
+		b="Hub";
+	}
+	void print()
+	{
+		System.out.println(a+ " "+b);
+	}
+	public static void main(String[] args) 
+	{
+		con1 c=new con1();
+		c.print();
+	}
+
+}
