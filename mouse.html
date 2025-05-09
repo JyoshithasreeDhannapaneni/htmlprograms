@@ -1,0 +1,33 @@
+<!DocType html>
+<html>
+  <head>
+	<title>"On mouse over"</title>
+	<style>
+		#title{
+			width:500px;
+		     }
+	</style>
+	</head>
+	<body>
+		<h1>Paragraph content</h1>
+		<img id="title" src="https://img.freepik.com/premium-photo/best-amazing-wonderful-this-photo-take-this-picture-your-work-ai-generated-top-lovely-photo_1169327-105130.jpg" onMouseOver='m1()' onMouseOut='m2()'>
+		<button onclick="m3()">present</button>
+		<script>
+		var r=document.getElementById("title");
+		var a=r.src;
+		function m1()
+		{
+		    r.src="https://tse4.mm.bing.net/th?id=OIP.-15_9rp1nRdFBCqLgpdtTgHaEK&pid=Api&P=0&h=180";
+		    
+		}
+		function m2()
+		{
+				r.src=a;
+		}
+		function m3()
+		{
+			r.src="https://creapills.com/wp-content/uploads/2022/10/dall-e-gratuit-intelligence-artificielle-2.jpg";
+		}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,65 @@
+<!Doctype html>
+<html>
+<head>
+</head>
+<body>
+<script>
+	/*const a=[1,2,3,4,5];
+	let myfunction=(e,i)=>
+	{
+		return e*5;
+	}
+	var temp=a.map(myfunction);
+	console.log(temp);*/
+	/*a.forEach((e,i)=>
+	{
+	  return e*5;
+	}
+	var temp=a.map(myfunction);
+	console.log(temp);)*/
+	/*a.forEach((e,i)=>console.log(temp));
+	console.log("____________________");
+	let methodfunction=(e)=>
+	{
+		return e==2;
+	}
+	var t=a.findIndex(methodfunction);
+	console.log(t);
+	console.log("_______________________________");
+	console.log(a.fill(2,1));
+	let sumfunction=(e)=>
+	{
+		return e==3;
+	}
+	var s=a.some(sumfunction);
+	var v=a.every(sumfunction);
+	console.log(v);
+	console.log(s);*/
+	const a=[1,2,3,4,5,8,function()
+		{
+			console.log(" I am function");
+		},['a','b','c']]
+		console.log(a);
+			for(var x of a)
+			{
+				console.log(typeof(x));
+			}
+			for(var y of a)
+			{
+				if(typeof(y)=='function')
+				{
+					y();
+				}
+				else if(Array.isArray(x))
+				{
+					for(var j of y)
+					console.log(j);
+				}
+				else
+				{
+					console.log(y);
+				}
+			}
+</script>
+</body>
+</html>
